@@ -1,0 +1,14 @@
+.form-check-input {
+    transform: scale(1.5);
+    margin-right: 10px;
+}
+
+.consent-box {
+    border: 2px solid rgb(0, 0, 0);  /* Black border */
+    background-color: #5e5e5e;  /* Black background */
+    padding: 10px;           /* Some padding to give space inside the rectangle */
+    color: #FFF;             /* White text color */
+    border-radius: 5px;      /* Optional: Rounded corners */
+}
+
+
