@@ -44,6 +44,8 @@ def assign_group(request: Request):
         "next_page": next_page  # Pass the next_page variable to the template
     })
 
+# Routing for video content
+
 @app.get("/video1")
 def video1(request: Request):
     return templates.TemplateResponse("video1.html", {"request": request})
@@ -53,16 +55,26 @@ def video2(request: Request):
     return templates.TemplateResponse("video2.html", {"request": request})
 
 @app.get("/video3")
-def video1(request: Request):
+def video3(request: Request):
     return templates.TemplateResponse("video3.html", {"request": request})
 
 @app.get("/video4")
-def video2(request: Request):
+def video4(request: Request):
     return templates.TemplateResponse("video4.html", {"request": request})
 
+# Routing for infographic content
+
 @app.get("/infographic1")
-def video1(request: Request):
+def infographic1(request: Request):
     return templates.TemplateResponse("infographic1.html", {"request": request})
+
+@app.get("/infographic2")
+def infographic2(request: Request):
+    return templates.TemplateResponse("infographic2.html", {"request": request})
+
+@app.get("/infographic3")
+def infographic3(request: Request):
+    return templates.TemplateResponse("infographic3.html", {"request": request})
 
 
 if __name__ == "__main__":
