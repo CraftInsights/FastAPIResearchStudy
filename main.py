@@ -76,6 +76,14 @@ def infographic2(request: Request):
 def infographic3(request: Request):
     return templates.TemplateResponse("infographic3.html", {"request": request})
 
+@app.get("/infographic4")
+def infographic4(request: Request):
+    return templates.TemplateResponse("infographic4.html", {"request": request})
+
+@app.get("/infographic5")
+def infographic5(request: Request):
+    return templates.TemplateResponse("infographic5.html", {"request": request})
+
 
 if __name__ == "__main__":
     import uvicorn
