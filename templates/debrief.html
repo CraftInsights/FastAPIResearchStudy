@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.yorku.ca/health/psychology/wp-content/themes/york2020/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.yorku.ca/health/psychology/wp-content/themes/york2020/favicon-16x16.png">
+    <title>Research Study</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../assets/img/yorku-logo.jpg" alt="University Logo" width="200" height="48">
+        </a>
+        <div class="d-flex">
+            <span class="navbar-text">
+                Research Study
+            </span>
+        </div>
+    </div>
+</nav>
+
+<!-- Content -->
+<main class="container">
+    <div class="col-md-12">
+        <article>
+            <h1 class="img-fluid mt-4" id="debrief">Debrief</h1>
+            <div class="img-fluid mb-2">
+                <img src="../assets/img/psychdepartment.png" alt="Psyc logo" class="img-fluid">
+                <img src="../assets/img/manimlogo.png" alt="Manim logo" class="img-fluid"> <!-- Added spacing here -->
+            </div>
+            
+            <span class="badge rounded-pill bg-success mb-5">Success</span>
+
+            <p>At the beginning of the study, you were told:</p>
+
+            <div class="quotebox mb-4">
+                <blockquote class="blockquote">
+                    <p>💬</p>
+                    <p><i>" This research project aims to investigate the effectiveness of different types of content in educating participants on core statistical concepts. The study will focus on concepts that are taught in 2000-level statistics courses at York University:</i></p>
+                    <ul>
+                        <li><i>Central Tendency</i></li>
+                        <li><i>Variability "</i></li>
+                    </ul>
+                </blockquote>
+            </div>
+        
+            <p class="mb-4">And that you would be randomly assigned to one of 2 groups: <strong>Group A</strong> or <strong>Group B</strong></p> <!-- Added spacing here -->
+            <hr class="mt-5 mb-5">
+
+            <h2>Group A</h2>
+            <p class="mb-5">If you were assigned to this group, you were served <mark class="bg-highlight">video</mark> content that would explain the statistical concepts to you:</p> <!-- Added spacing here -->
+
+            <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true">
+              <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              </div>
+              <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <video class="d-block w-100" controls>
+                          <source src="../assets/videos/video1.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                  </div>
+                  <div class="carousel-item">
+                      <video class="d-block w-100" controls>
+                          <source src="../assets/videos/video2.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                  </div>
+                  <div class="carousel-item">
+                      <video class="d-block w-100" controls>
+                          <source src="../assets/videos/video3.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                  </div>
+                  <div class="carousel-item">
+                      <video class="d-block w-100" controls>
+                          <source src="../assets/videos/video4.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                  </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          
+
+            <h2>Group B</h2>
+            <p class="mb-5">If you were assigned to this group, you were served <mark class="bg-highlight">infographic</mark> content that would explain the statistical concepts to you:</p> <!-- Added spacing here -->
+        
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>                     
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../assets/infographics/infographic2.png" class="d-block w-100" alt="Infographic 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/infographics/infographic3.png" class="d-block w-100" alt="Infographic 3">
+                    </div>    
+                    <div class="carousel-item">
+                        <img src="../assets/infographics/infographic4b.png" class="d-block w-100" alt="Infographic 4b">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/infographics/infographic4.png" class="d-block w-100" alt="Infographic 4">
+                    </div>                                                         
+                    <div class="carousel-item">
+                        <img src="../assets/infographics/infographic5.png" class="d-block w-100" alt="Infographic 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../assets/infographics/infographic5b.png" class="d-block w-100" alt="Infographic 5b">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            
+            <hr class="mt-5 mb-5">
+
+            <h3 class="table mt-5 mb-5 text-center">Overview</h3>
+            <section class="overview-table">
+                <div class="bg-image h-100">
+                  <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0,0,0,.25);">
+                    <div class="container">
+                      <div class="row justify-content-center">
+                        <div class="col-12">
+                          <div class="card bg-dark shadow-2-strong">
+                            <div class="card-body">
+                              <div class="table-responsive">
+                                <table class="table table-dark table-borderless mb-0">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col"></th>
+                                      <th scope="col">Static Visual Educational Content  (Infographics)</th>
+                                      <th scope="col">Dynamic Visual Educational Content  (Videos)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row">Group A</th>
+                                      <td>No</td>
+                                      <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Group B</th>
+                                      <td>Yes</td>
+                                      <td>No</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+            <hr class="mt-5 mb-5">
+
+            <h2>Goal</h2>
+            <p class="mb-5">The goal of the study is to see whether or not there is a difference between different types of educational content in explaining statistics to learners</p> <!-- Added spacing here -->
+        
+            <div class="text-center mb-5" id="thankyou">
+                <img src="../assets/img/ThankYou.png" alt="Thank You For Participating" class="img-fluid mx-auto">
+            </div>            
+        </article>        
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Pause videos when navigating the carousel
+  document.querySelector('#videoCarousel').addEventListener('slid.bs.carousel', function () {
+      // Find all videos within the carousel
+      var videos = this.querySelectorAll('video');
+
+      // Pause each video
+      videos.forEach(function (video) {
+          video.pause();
+      });
+  });
+</script>
+</body>
+</html>

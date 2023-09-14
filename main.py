@@ -2,13 +2,13 @@ from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-
 import json
 
 app = FastAPI()
 
 # Serve static files
 app.mount("/assets", StaticFiles(directory="assets"), name="assets")
+
 
 templates = Jinja2Templates(directory="templates")
 
@@ -83,6 +83,26 @@ def infographic4(request: Request):
 @app.get("/infographic5")
 def infographic5(request: Request):
     return templates.TemplateResponse("infographic5.html", {"request": request})
+
+# Survey routing
+
+@app.get("/pre_survey")
+def pre_survey(request: Request):
+    return templates.TemplateResponse("pre_survey.html", {"request": request})
+
+@app.get("/post_survey_videos")
+def post_survey_videos(request: Request):
+    return templates.TemplateResponse("post_survey_videos.html", {"request": request})
+
+@app.get("/post_survey_infographic")
+def post_survey_infographic(request: Request):
+    return templates.TemplateResponse("post_survey_infographic.html", {"request": request})
+
+# Debrief
+
+@app.get("/debrief")
+def debrief(request: Request):
+    return templates.TemplateResponse("debrief.html", {"request": request})
 
 
 if __name__ == "__main__":

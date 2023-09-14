@@ -1,3 +1,29 @@
+/* Set a light gray background color for the body element */
+body {
+    background-color: #f5f5f5;
+}
+
+/* Target all navbars */
+.navbar {
+    background-color: #dddddd; 
+}
+
+/* Adjust text color for better contrast on the light background */
+p, h1, h2, h3, h4, h5, h6 {
+    color: #333; /* Dark gray text color */
+}
+
+p {
+    font-size: 22px;
+}
+
+mark {
+    background-color: #a9dfff; 
+    
+}
+
+/* ------------------------- Ethics page -------------------------*/
+
 .form-check-input {
     transform: scale(1.5);
     margin-right: 10px;
@@ -9,6 +35,59 @@
     padding: 10px;           /* Some padding to give space inside the rectangle */
     color: #FFF;             /* White text color */
     border-radius: 5px;      /* Optional: Rounded corners */
+}
+
+/* ------------------------- Debrief page -------------------------*/
+
+#debrief {
+    font-size: 60px; /* Adjust the font size as needed */
+}
+
+#thankyou {
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.badge {
+    font-size: 14px; /* Adjust the font size to make it bigger */
+    padding: 8px 10px; /* Adjust the padding to increase the size */
+}
+
+.quotebox {
+    background-color: white;
+    border: 5px solid #000;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 100%; /* Ensures it scales with the viewport width */
+    margin: 0 auto; /* Center the container horizontally */
+    box-sizing: border-box; /* Ensures padding and border don't affect the container's width */
+}
+
+.carousel-inner img, .carousel-inner video {
+    max-height: 540px;  /* Adjust this value to fit your needs */
+    max-width: 960px;
+    margin: 0 auto; /* Centers the image horizontally */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    
+    background-image: none; /* Override Bootstrap's default arrow styling */
+}
+
+.carousel-control-prev-icon:before,
+.carousel-control-next-icon:before {
+    content: '\2039'; /* Left-pointing arrow for previous */
+    color: #003079;  /* Bootstrap's primary blue color */
+    font-size: 100px; /* Adjust the font size as needed */
+    font-family: 'Times New Roman', Times, serif; /* Font family that supports the arrow characters */
+}
+
+.carousel-control-next-icon:before {
+    content: '\203a'; /* Right-pointing arrow for next */
 }
 
 
