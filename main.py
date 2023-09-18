@@ -41,7 +41,6 @@ def assign_group(request: Request):
     return templates.TemplateResponse("assign_group.html", {
         "request": request,
         "group": new_group,
-        "next_page": next_page  # Pass the next_page variable to the template
     })
 
 # Routing for video content
