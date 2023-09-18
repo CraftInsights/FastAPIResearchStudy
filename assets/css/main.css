@@ -37,6 +37,19 @@ mark {
     border-radius: 5px;      /* Optional: Rounded corners */
 }
 
+
+/* ----------------------- Assign Group page -----------------------*/
+
+.group-box {
+    font-size: 2rem;
+    background-color: rgb(255, 255, 255);
+    border: 5px solid;
+    border-radius: 10px; /* Adjust this value for desired roundness */
+    padding: 20px 20px; /* Vertical and horizontal padding */
+    display: inline-block; /* To treat the span as a block but inside inline context */
+}
+
+
 /* ------------------------- Debrief page -------------------------*/
 
 #debrief {
@@ -89,6 +102,3 @@ mark {
 .carousel-control-next-icon:before {
     content: '\203a'; /* Right-pointing arrow for next */
 }
-
-/* Testing to see if the css file will be read accurately */
-

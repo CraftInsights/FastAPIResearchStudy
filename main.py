@@ -1,14 +1,15 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Form, Depends
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-
+from fastapi.responses import RedirectResponse
+from filelock import FileLock
 import json
+import uuid
 
 app = FastAPI()
 
 # Serve static files
 app.mount("/assets", StaticFiles(directory="assets"), name="assets")
-
 
 templates = Jinja2Templates(directory="templates")
 
@@ -21,26 +22,49 @@ def ethics(request: Request):
     return templates.TemplateResponse("ethics.html", {"request": request})
 
 @app.get("/assign_group")
-def assign_group(request: Request):
-    with open('group_data.json', 'r') as file:
-        data = json.load(file)
-        last_group = data['last_group']
+def show_form(request: Request):
+    return templates.TemplateResponse("assign_group.html", {"request": request})
 
-    # Alternate group assignment
-    if last_group == 'A':
-        new_group = 'B'
-        next_page = "/infographic1"  # This can be the link to the first page of Group B content
-    else:
-        new_group = 'A'
-        next_page = "/video1"  # This can be the link to the first page of Group A content
+@app.post("/assign_group")
+def assign_group_post():
+    lock = FileLock("group_data.json.lock")
 
-    # Update the JSON file on the disk
-    with open('group_data.json', 'w') as file:
-        json.dump({'last_group': new_group}, file)
+    with lock:
+        try:
+            with open('group_data.json', 'r') as file:
+                data = json.load(file)
+                last_group = data.get('last_group', 'B')
+                if "Participants" not in data:
+                    data['Participants'] = {}
+        except FileNotFoundError:
+            data = {
+                'Participants': {},
+                'last_group': 'B'
+            }
+            last_group = 'B'
 
+        visitor_id = str(uuid.uuid4())
+        new_group = 'A' if last_group == 'B' else 'B'
+
+        next_page = "/video1" if new_group == 'A' else "/infographic1"
+
+        data['Participants'][f'visitor {len(data["Participants"]) + 1}'] = {
+            'ID': visitor_id,
+            'Group': new_group
+        }
+        data['last_group'] = new_group
+
+        with open('group_data.json', 'w') as file:
+            json.dump(data, file, indent=4)
+
+    return RedirectResponse(url=f"/show_group?group={new_group}&next_page={next_page}", status_code=303)
+
+@app.get("/show_group")
+def show_group(request: Request, group: str, next_page: str):
     return templates.TemplateResponse("assign_group.html", {
         "request": request,
-        "group": new_group,
+        "group": group,
+        "next_page": next_page
     })
 
 # Routing for video content
