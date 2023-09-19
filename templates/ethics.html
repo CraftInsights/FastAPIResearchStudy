@@ -1,36 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.yorku.ca/health/psychology/wp-content/themes/york2020/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://www.yorku.ca/health/psychology/wp-content/themes/york2020/favicon-16x16.png">
-    <title>Research Study</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/main.css" rel="stylesheet">
-</head>
-<body>
+{% extends "base.html" %}
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="../assets/img/yorku-logo.jpg" alt="University Logo" width="200" height="48">
-        </a>
-        <div class="d-flex">
-            <span class="navbar-text">
-                Research Study
-            </span>
-        </div>
-    </div>
-</nav>
-
+{% block content %}
 <!-- Content -->
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8 text-center">
             <div id="ethics">
                 <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Informed_Consent_0"></a>INFORMED CONSENT</h1>
+                    <hr>
                     <h3 class="code-line" data-line-start=2 data-line-end=3 ><a id="Study_Name_2"></a>Study Name:</h2>
                     <p class="has-line-data" data-line-start="3" data-line-end="4">Developing and testing online activities for undergraduate statistics</p>
                     <h3 class="code-line" data-line-start=5 data-line-end=6 ><a id="Purpose_of_the_Research_5"></a>Purpose of the Research:</h2>
@@ -50,20 +27,19 @@
                     <h3 class="code-line" data-line-start=27 data-line-end=28 ><a id="Questions_About_the_Research_27"></a>Questions About the Research?</h2>
                     <p class="has-line-data" data-line-start="28" data-line-end="29">If you have questions about the research in general or about your role in the study, please feel free to contact Dr. Herbert by e-mail (<a href="mailto:herbertm@yorku.ca">herbertm@yorku.ca</a>).  This research has received ethics review and approval by the Human Participants Review Sub-Committee, York University’s Ethics Review Board and conforms to the standards of the Canadian Tri-Council Research Ethics guidelines. If you have any questions about this process, or about your rights as a participant in the study, please contact the Sr. Manager &amp; Policy Advisor for the Office of Research Ethics, 5th Floor, Kaneff Tower, York University (telephone 416-736-5914 or e-mail <a href="mailto:ore@yorku.ca">ore@yorku.ca</a>).</p>
                     <h3 class="code-line" data-line-start=29 data-line-end=30 ><a id="Legal_Rights_and_Signatures_29"></a>Legal Rights and Signatures:</h2>
-                    <p class="has-line-data" data-line-start="30" data-line-end="31">I have understood the nature of this project being conducted by Dr. Herbert.  I am not waiving any of my legal rights by consenting to participate in this research.</p>information you supply during the research will be held in confidence. Data will be collected through the online platform, Qualtrics, in an anonymous manner, and stored on a secure server, data repository and/or encrypted USB. These data will be kept indefinitely in order to inform and advance the scientific/scholarly community. After the data collection period, which is occurring over a 2-year period, these data will be shared in an anonymized form publicly on a data repository like Open Science Framework (OSF) or Dataverse. Confidentiality will be provided to the fullest extent possible by law.</p>
+                    <p class="has-line-data mb-4" data-line-start="30" data-line-end="31">I have understood the nature of this project being conducted by Dr. Herbert.  I am not waiving any of my legal rights by consenting to participate in this research.</p>information you supply during the research will be held in confidence. Data will be collected through the online platform, Qualtrics, in an anonymous manner, and stored on a secure server, data repository and/or encrypted USB. These data will be kept indefinitely in order to inform and advance the scientific/scholarly community. After the data collection period, which is occurring over a 2-year period, these data will be shared in an anonymized form publicly on a data repository like Open Science Framework (OSF) or Dataverse. Confidentiality will be provided to the fullest extent possible by law.</p>
             </div>
-            <div class="consent-box">
-                <div class="form-check mt-4">
-                    <input class="form-check-input me-2" type="checkbox" id="consentCheckbox">
+            <div class="consent-box mt-5">
+                <div class="form-check">
+                    <input class="form-check-input me-2 mt-2" type="checkbox" id="consentCheckbox">
                     <label class="form-check-label fw-bold fs-4" for="consentCheckbox">I give my consent to participate in this study</label>
                 </div>
             </div>            
-            <a class="btn btn-secondary mt-3 mb-5" id="agreeBtn" disabled>Agree</a>
+            <a class="btn btn-secondary mt-3 mb-5 fs-4" id="agreeBtn" disabled>Agree</a>
         </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     const consentCheckbox = document.getElementById('consentCheckbox');
     const agreeBtn = document.getElementById('agreeBtn');
@@ -87,5 +63,4 @@
         }
     });
 </script>
-</body>
-</html>
+{% endblock %}

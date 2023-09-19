@@ -1,40 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.yorku.ca/health/psychology/wp-content/themes/york2020/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://www.yorku.ca/health/psychology/wp-content/themes/york2020/favicon-16x16.png">
-    <title>Research Study</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/main.css" rel="stylesheet">
-</head>
-<body>
+{% extends "base.html" %}
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="../assets/img/yorku-logo.jpg" alt="University Logo" width="200" height="48">
-        </a>
-        <div class="d-flex">
-            <span class="navbar-text">
-                Research Study
-            </span>
-        </div>
+{% block content %}
+    <!-- Direct participants to Qualtrics pre-survey -->
+    <div class="container mt-5 text-center">
+        <h2 class="fw-bolder mb-4">Pre Survey</h2>
+        <p class="mb-4">Please complete the survey before starting the study.</p>
+        <hr>
+        <a href="https://qualtricsxmpxwpv28zd.qualtrics.com/jfe/form/SV_eWB0zwAWTC7dqsu" class="btn btn-primary mt-3">Proceed</a>
     </div>
-</nav>
+{% endblock %}
 
-<!-- Insert Qualtrics Embedding Here -->
-<div class="container mt-5 text-center">
-    <h2 class="fw-bolder mb-4">Pre Survey</h2>
-    <p class="mb-4">Please complete the survey before starting the study.</p>
-    <hr>
-    <a href="https://qualtricsxmpxwpv28zd.qualtrics.com/jfe/form/SV_eWB0zwAWTC7dqsu" class="btn btn-primary mt-3">Proceed</a>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
 
 
