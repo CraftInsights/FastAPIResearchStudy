@@ -102,3 +102,20 @@ mark {
 .carousel-control-next-icon:before {
     content: '\203a'; /* Right-pointing arrow for next */
 }
+
+@media (max-width: 48rem) { /* Adjust breakpoint as needed */
+    .custom-carousel .carousel-control-prev,
+    .custom-carousel .carousel-control-next {
+        top: auto; /* Remove the top positioning */
+        bottom: -2rem; /* Position the controls below the carousel */
+    }
+    .custom-carousel .carousel-control-prev-icon:before,
+    .custom-carousel .carousel-control-next-icon:before {
+        font-size: 5rem; /* Adjust the font size for mobile view */
+    }
+    .custom-carousel {
+        margin-bottom: 8rem; /* Add space below the carousel */
+    }
+}
+
+
