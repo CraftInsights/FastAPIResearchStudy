@@ -17,11 +17,11 @@
 
                 <div class="quotebox mb-4">
                     <blockquote class="blockquote">
-                        <p class="fs-4">💬</p>
-                        <p><i>" This research project aims to investigate the effectiveness of different types of content in educating participants on core statistical concepts. The study will focus on concepts that are taught in 2000-level statistics courses at York University:</i></p>
+                        <p class="fs-4">" 💬 "</p>
+                        <p><i>This research project aims to investigate the effectiveness of different types of content in educating participants on core statistical concepts. The study will focus on concepts that are taught in 2000-level statistics courses at York University:</i></p>
                         <ul>
                             <li><i>Central Tendency</i></li>
-                            <li><i>Variability "</i></li>
+                            <li><i>Variability</i></li>
                         </ul>
                     </blockquote>
                 </div>
@@ -163,6 +163,13 @@
 
                 <hr class="mt-5 mb-5">
 
+                <h2>Post Survey Answers</h2>
+                <p>These are the answers to the questions related to the content covering statistics knowledge:</p>
+
+                <!-- Answers to the statistics post survey questions -->
+                {% include "answers.html" %}
+
+                <hr class="mt-5 mb-5">
                 <h2>Goal</h2>
                 <p class="mb-5">The goal of the study is to see whether or not there is a difference between different types of educational content in explaining statistics to learners.</p> <!-- Added spacing here -->
             
@@ -185,6 +192,24 @@
             video.pause();
         });
     });
+
+    // Function to toggle the visibility of the quiz content
+    function toggleQuizContent() {
+        var quizSection = document.querySelector(".quiz-section");
+        var revealButton = document.querySelector("#revealButton");
+
+        if (quizSection.style.display === "none") {
+            quizSection.style.display = "block";
+            revealButton.textContent = "Hide Answers";
+        } else {
+            quizSection.style.display = "none";
+            revealButton.textContent = "Reveal Answers";
+        }
+    }
+
+    // Add a click event listener to the "Reveal Answers" button
+    var revealButton = document.querySelector("#revealButton");
+    revealButton.addEventListener("click", toggleQuizContent);
     </script>
 {% endblock %}
 
