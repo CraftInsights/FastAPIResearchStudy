@@ -14,16 +14,19 @@
 
                 <!-- Dismissible Alert -->
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <p><b>👀😄 It's highly important you finish videos to completion 😄👀</b></p>
+                    <p><b>👀😄 It's highly important you finish each video to completion 😄👀</b></p>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
 
                 <!-- Title above the video -->
-                <h2 class="fw-bolder mb-4">Enjoy the Journey!</h2>
+                <h2 class="fw-bolder mb-4">Getting Started</h2>
+                <p>You can turn off captions by clicking the three dots.</p>
                 <video controls width="100%">
                     <source src="/assets/videos/video1.mp4" type="video/mp4">
+                    <track src="../assets/subtitles/video1_subtitles.vtt" kind="subtitles" srclang="en" label="English" default>
                     Your browser does not support the video tag.
                 </video>
+                
                 <!-- Link to Next Video or Survey (adjust based on video number) -->
                 <a href="/video2" class="btn btn-primary mt-3">Next</a>
             </div>

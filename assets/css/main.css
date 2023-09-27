@@ -50,6 +50,16 @@ mark {
 }
 
 
+::cue {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgb(255, 255, 255);
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-weight: bold;
+}
+
+
+
 /* ------------------------- Debrief page -------------------------*/
 
 #debrief {
