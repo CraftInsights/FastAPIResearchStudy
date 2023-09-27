@@ -22,6 +22,11 @@ mark {
     
 }
 
+.progress {
+    height: 30px;  /* Adjust this value to your desired thickness */
+}
+
+
 /* ------------------------- Ethics page -------------------------*/
 
 .form-check-input {

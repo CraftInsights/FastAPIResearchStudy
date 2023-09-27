@@ -1,0 +1,6 @@
+{% block progress %}
+    <!-- Progress Bar -->
+    <div class="progress">
+        <div class="progress-bar fs-5" role="progressbar" style="width: {{ progress_width|default('20%') }}" aria-valuenow="{{ progress_value|default('20') }}" aria-valuemin="0" aria-valuemax="100">{{ progress_text|default('1/5') }}</div>
+    </div>
+{% endblock %}

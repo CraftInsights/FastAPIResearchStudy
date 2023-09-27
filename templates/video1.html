@@ -1,11 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <!-- Progress Bar -->
-    <!-- You can use Bootstrap's progress bar component. Adjust the width (value of aria-valuenow) based on the video number -->
-    <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">1/4</div>
-    </div>
+    <!-- Inherit Progress Bar -->
+    {% include "progress_bar_video.html" %}
 
     <!-- Video Content -->
     <div class="container mt-5">
