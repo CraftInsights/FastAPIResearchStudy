@@ -49,6 +49,8 @@ def assign_group_post():
 
         next_page = "/video1" if new_group == 'A' else "/infographic1"
 
+        activity = "This activity consists of 4 videos totaling roughly 10 min in length." if new_group == 'A' else "This activity consists of 7 infographics."
+
         data['Participants'][f'visitor {len(data["Participants"]) + 1}'] = {
             'ID': visitor_id,
             'Group': new_group
@@ -58,14 +60,15 @@ def assign_group_post():
         with open('group_data.json', 'w') as file:
             json.dump(data, file, indent=4)
 
-    return RedirectResponse(url=f"/show_group?group={new_group}&next_page={next_page}", status_code=303)
+    return RedirectResponse(url=f"/show_group?group={new_group}&next_page={next_page}&activity={activity}", status_code=303)
 
 @app.get("/show_group")
-def show_group(request: Request, group: str, next_page: str):
+def show_group(request: Request, group: str, next_page: str, activity: str):
     return templates.TemplateResponse("assign_group.html", {
         "request": request,
         "group": group,
-        "next_page": next_page
+        "next_page": next_page,
+        "activity": activity 
     })
 
 # Routing for video content

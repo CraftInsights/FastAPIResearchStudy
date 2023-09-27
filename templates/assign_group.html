@@ -11,7 +11,7 @@
                     Thank you for your participation.
                 </p>
                 <p>
-                    You will now be randomly assigned to a group in order to take part in this study. Please click the button below
+                    You will now be randomly assigned to a group in order to take part in this study. Please click the button below.
                 </p>
                 
                 {% if not group %}
@@ -25,6 +25,7 @@
                     </div>
                     <hr>
                     <p> You will now be asked to complete an online activity followed by a post survey in order to conclude the study.</p>
+                    <p><strong>{{ activity }}</strong></p>
                     <a href="{{ next_page }}" class="btn btn-primary mt-3 mb-4">Proceed</a>
                 {% endif %}
             </div>
