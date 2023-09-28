@@ -1,10 +1,16 @@
 # Super-Awesome-Totally-Cool Research Project #1
 
-![Project Logo](https://manimresearchstudy.onrender.com/assets/img/Github%20Logo.png)
+<div align="center" style="margin-bottom: 20px;">
+  <img src="https://manimresearchstudy.onrender.com/assets/img/Github%20Logo.png" alt="Project Logo">
+</div>
 
-![Version](https://img.shields.io/badge/version-0.8.2-green)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cq88wa9YAMwSbDkBDCzqMuhMvcGvpMEa?usp=sharing)
-![Department](https://img.shields.io/badge/York_University_Department_of_Psychology-red)
+<div align="center">
+  <img src="https://img.shields.io/badge/version-0.8.2-green" alt="Version">
+  <a href="https://colab.research.google.com/drive/1cq88wa9YAMwSbDkBDCzqMuhMvcGvpMEa?usp=sharing">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+  </a>
+  <img src="https://img.shields.io/badge/York_University_Department_of_Psychology-red" alt="Department">
+</div>
 
 --- 
 ## Table of Contents
