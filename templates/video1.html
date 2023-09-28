@@ -11,26 +11,53 @@
 
                 <!-- Dismissible Alert -->
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <p><b>👀😄 It's highly important you finish each video to completion 😄👀</b></p>
+                    <p><b>👀 It's highly important you finish each video to completion</b></p>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <!-- Dismissible Alert -->
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <p>⚙️ If you wish to watch in fullscreen, you can turn on captions by clicking the three dots </p>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
 
                 <!-- Title above the video -->
                 <h2 class="fw-bolder mb-4">Getting Started</h2>
-                <p>You can turn off captions by clicking the three dots.</p>
-                <video controls width="100%">
+                
+                <video id="myVideo" controls width="100%">
                     <source src="/assets/videos/video1.mp4" type="video/mp4">
-                    <track src="../assets/subtitles/video1_subtitles.vtt" kind="subtitles" srclang="en" label="English" default>
+                    <track id="subtitleTrack" src="../assets/subtitles/video1_subtitles.vtt" kind="subtitles" srclang="en" label="English">
                     Your browser does not support the video tag.
                 </video>
+                <!-- Element to display the subtitle outside the video -->
+                <div id="subtitleDisplay" class="subtitle-display"></div>
 
-                
                 <!-- Link to Next Video or Survey (adjust based on video number) -->
-                <a href="/video2" class="btn btn-primary mt-3">Next</a>
+                <a href="/video2" class="btn btn-primary mt-3 mb-4">Next</a>
             </div>
         </div>
     </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        console.log("Document loaded");
 
+        var video = document.getElementById('myVideo');
+        var track = document.getElementById('subtitleTrack').track;
+        var display = document.getElementById('subtitleDisplay');
+
+        // Programmatically enable the track
+        track.mode = 'hidden';  // This will enable the track without displaying the captions on the video
+
+        track.oncuechange = function() {
+            console.log("Cue changed");
+            var cue = this.activeCues[0];
+            if (cue) {
+                display.innerHTML = cue.text;
+            } else {
+                display.innerHTML = '';
+            }
+        };
+    });
+</script>
 {% endblock %}
 

@@ -15,15 +15,41 @@
             <div class="col-md-8 text-center">
                 <!-- Title above the video -->
                 <h2 class="fw-bolder mb-4">Chapter 2: Variability</h2>
-                <video controls width="100%">
-                    <source src="/assets/videos/video3.mp4" type="video/mp4">
-                    <track src="../assets/subtitles/video3_subtitles.vtt" kind="subtitles" srclang="en" label="English" default>
+                <video id="myVideo" controls width="100%">
+                    <source src="../assets/videos/video3.mp4" type="video/mp4">
+                    <track id="subtitleTrack" src="../assets/subtitles/video3_subtitles.vtt" kind="subtitles" srclang="en" label="English">
                     Your browser does not support the video tag.
                 </video>
+                <!-- Element to display the subtitle outside the video -->
+                <div id="subtitleDisplay" class="subtitle-display"></div>
+                
                 <!-- Link to Next Video or Survey (adjust based on video number) -->
                 <a href="/video2" class="btn btn-outline-dark mt-3">Back</a>
                 <a href="/video4" class="btn btn-primary mt-3">Next</a>
             </div>
         </div>
     </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        console.log("Document loaded");
+
+        var video = document.getElementById('myVideo');
+        var track = document.getElementById('subtitleTrack').track;
+        var display = document.getElementById('subtitleDisplay');
+
+        // Programmatically enable the track
+        track.mode = 'hidden';  // This will enable the track without displaying the captions on the video
+
+        track.oncuechange = function() {
+            console.log("Cue changed");
+            var cue = this.activeCues[0];
+            if (cue) {
+                display.innerHTML = cue.text;
+            } else {
+                display.innerHTML = '';
+            }
+        };
+    });
+</script>
 {% endblock %}
