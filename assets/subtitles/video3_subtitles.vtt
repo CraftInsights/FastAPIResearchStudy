@@ -1,20 +1,170 @@
 WEBVTT
 
 
-00:00:04.000 --> 00:00:05.500
-Hello and welcome.
+00:00:00.200 --> 00:00:03.500
+Let's take another step forward towards understanding the concept of
 
-00:00:05.600 --> 00:00:08.000
-Today we're going to talk about the importance of data.
+00:00:03.600 --> 00:00:07.700
+variability and we'll continue using our trusty deck of playing cards 
 
-00:00:08.100 --> 00:00:10.000
-How data can be analyzed.
+00:00:07.800 --> 00:00:08.500
+for our example.
 
-00:00:10.100 --> 00:00:13.400
-How data can be visualized as illustrated here on this graph.
+00:00:14.600 --> 00:00:18.900
+Variability, also known as dispersion, refers to how spread out
 
-00:00:14.500 --> 00:00:19.300
-And we will also highlight two important fundamental concepts in statistics:
+00:00:19.000 --> 00:00:22.000
+or closely clustered a set of values are in a data set. 
 
-00:00:19.400 --> 00:00:22.000
-Central tendency & Variability
+00:00:22.400 --> 00:00:24.500
+There are several ways to measure this 
+
+00:00:24.600 --> 00:00:26.200
+but we'll focus on three main ones:
+
+00:00:26.400 --> 00:00:29.400
+range, variance and standard deviation.
+
+00:00:29.800 --> 00:00:34.200
+And standard deviation is a statistic that is reported very often.
+
+00:00:34.300 --> 00:00:38.000
+It is the most popular measure of variability that is reported
+
+00:00:40.000 --> 00:00:42.100
+Let's draw 5 cards again.
+
+00:00:42.200 --> 00:00:46.800
+Suppose we got a 2, a 4, a 6, an 8 and a King 
+
+00:00:46.900 --> 00:00:49.000
+(which we know counts as 13).
+
+00:00:49.900 --> 00:00:52.500
+The range is the simplest measure of variability.
+
+00:00:52.600 --> 00:00:55.200
+It's the difference between the highest and the lowest values
+
+00:00:55.300 --> 00:00:56.600
+in our dataset.
+
+00:00:56.700 --> 00:01:01.400
+So in our case, if we subtract 2 from 13, we get a range of 11.
+
+00:01:05.000 --> 00:01:07.000
+Now let's look at a dataset of numbers, 
+
+00:01:07.100 --> 00:01:09.200
+and plot the points on a numberline.
+
+00:01:17.600 --> 00:01:20.000
+Let's do the same with another set of numbers.
+
+00:01:30.800 --> 00:01:33.800
+For both of these datasets, the average is 5.
+
+00:01:36.200 --> 00:01:38.100
+But we can see that the way the numbers are dispersed
+
+00:01:38.200 --> 00:01:42.200
+are different in each set, they vary between themselves.
+
+00:01:46.400 --> 00:01:49.600
+We can draw smoother lines using statistical software
+
+00:01:49.700 --> 00:01:52.000
+that visually displays this difference.
+
+00:01:53.000 --> 00:01:55.200
+We can see that they are shaped differently.
+
+00:01:58.000 --> 00:02:01.000
+So let's explore this difference, and let's move to a slightly
+
+00:02:01.100 --> 00:02:02.500
+more complex measure. 
+
+00:02:08.400 --> 00:02:11.600
+Variance tells us how much our data diverges from the mean.
+
+00:02:12.000 --> 00:02:15.400
+To find it, we calculate the average of the squared differences
+
+00:02:15.500 --> 00:02:16.300
+from the mean.
+
+00:02:22.700 --> 00:02:24.800
+Don't worry about the calculations too much,
+
+00:02:24.900 --> 00:02:27.200
+we want to focus on the underlying concepts.
+
+00:02:28.000 --> 00:02:30.600
+But if you are curious about the math, the next segment
+
+00:02:30.700 --> 00:02:33.300
+will briefly go over the calculations once more.
+
+00:02:33.500 --> 00:02:35.400
+The important thing to note is that they build upon
+
+00:02:35.500 --> 00:02:38.000
+the concepts you learned at the beginning of the video.
+
+00:02:39.400 --> 00:02:41.400
+Here are the calculations once more.
+
+00:02:41.600 --> 00:02:43.700
+We first find the average of the card numbers;
+
+00:02:43.800 --> 00:02:46.200
+this gives us a mean of 6.6. 
+
+00:02:47.400 --> 00:02:50.300
+After that, we take the difference between each cards value
+
+00:02:50.400 --> 00:02:53.800
+and the mean, which we calculated to be 6.6,
+
+00:02:53.900 --> 00:02:56.000
+then we square these differences.
+
+00:03:00.500 --> 00:03:03.200
+Once we have our squared differences, we add them up
+
+00:03:03.300 --> 00:03:06.000
+and finally divide by the number of data points.
+
+00:03:06.300 --> 00:03:09.000
+In other words, the total amount of cards which is 5.
+
+00:03:09.100 --> 00:03:10.500
+This gives us the variance.
+
+00:03:27.900 --> 00:03:31.000
+Finally we come to the standard deviation.
+
+00:03:31.100 --> 00:03:34.000
+to get the standard deviation, all we have to do
+
+00:03:34.100 --> 00:03:37.000
+is simply take the square root of the variance.
+
+00:03:48.500 --> 00:03:51.900
+So, with range, variance, and standard deviation,
+
+00:03:52.000 --> 00:03:53.600
+we get a clearer picture of our data.
+
+00:03:54.000 --> 00:03:55.600
+Not just where the middle is, but also
+
+00:03:55.700 --> 00:03:58.800
+how much our data tends to deviate from that middle.
+
+00:03:58.900 --> 00:04:01.000
+Together with the measures of central tendency,
+
+00:04:01.100 --> 00:04:04.000
+these are powerful tools for understanding our data.

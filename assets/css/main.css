@@ -55,6 +55,8 @@ mark {
 }
 
 
+/* ------------------------- Video page -------------------------*/
+
 ::cue {
     background-color: rgba(0, 0, 0, 0.6);
     color: rgb(255, 255, 255);
@@ -63,6 +65,15 @@ mark {
     font-weight: bold;
 }
 
+.subtitle-display {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    border-radius: 5px;
+}
 
 
 /* ------------------------- Debrief page -------------------------*/
