@@ -23,7 +23,9 @@
 - [Acknowledgements](#acknowledgements)
 ---
 
-## Introduction 🐨
+## Introduction 
+
+🐨
 
 Welcome to the **Super-Awesome-Totally-Cool Research Project #1** repository!  &copy; 2023 
  
@@ -31,7 +33,9 @@ Are you interested in conducting online research studies with participants? User
 
 This repo should help you with that!
 
-## 🐨 Tools & Process
+## Tools & Process
+
+🐨
 
 List of all the software, tools, libraries, and services I used in order to complete this research project. Here is an overview of how they all intermingle:
 
@@ -39,7 +43,9 @@ List of all the software, tools, libraries, and services I used in order to comp
 
 Manim was used to create the educational animations for **Group A** to view. You can find the link to the Google Colab notebook above.
 
-## 🐨 Getting Started
+## Getting Started
+
+🐨
 
 The requirements.txt file is fairly small:
 
@@ -58,7 +64,11 @@ uvicorn main:app --reload
 
 This will start a server on `http://127.0.0.1:8000` in your browser
 
-## 🐨 Research Goal
+## Research Goal
+
+🐨
+
+> This research project is arranged by Dr. Herbert; a full-time faculty member in the Psychology Department, Faculty of Health
 
 This research project aims to investigate the effectiveness of using Manim animations in educating participants on core statistical concepts. The study will focus on concepts that are taught in 2000-level statistics courses at York University: 
 1. Central tendency
@@ -69,9 +79,10 @@ The project will involve creating animations using the Manim graphic engine to e
 
 After viewing the content, participants will take a post-survey to evaluate their understanding of the statistical concepts. The data collected from the surveys will be compared between the animated and static content groups to identify any differences in learning outcomes. This study aims to contribute to the ongoing discussion on the use of animations in educational content and provide insights into their effectiveness as a learning tool.
 
-> This research project is arranged by Dr. Herbert; a full-time faculty member in the Psychology Department, Faculty of Health
 
-## 🐨 Features
+## Features
+
+🐨
 
 The web app was designed with these key features in mind:
 
