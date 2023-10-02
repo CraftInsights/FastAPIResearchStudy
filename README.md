@@ -25,7 +25,7 @@
 
 ## Introduction 
 
-🐨
+### 🐨
 
 Welcome to the **Super-Awesome-Totally-Cool Research Project #1** repository!  &copy; 2023 
  
@@ -35,7 +35,7 @@ This repo should help you with that!
 
 ## Tools & Process
 
-🐨
+### 🐨
 
 List of all the software, tools, libraries, and services I used in order to complete this research project. Here is an overview of how they all intermingle:
 
@@ -45,7 +45,7 @@ Manim was used to create the educational animations for **Group A** to view. You
 
 ## Getting Started
 
-🐨
+### 🐨
 
 The requirements.txt file is fairly small:
 
@@ -66,7 +66,7 @@ This will start a server on `http://127.0.0.1:8000` in your browser
 
 ## Research Goal
 
-🐨
+### 🐨
 
 > This research project is arranged by Dr. Herbert; a full-time faculty member in the Psychology Department, Faculty of Health
 
@@ -82,7 +82,7 @@ After viewing the content, participants will take a post-survey to evaluate thei
 
 ## Features
 
-🐨
+### 🐨
 
 The web app was designed with these key features in mind:
 
