@@ -15,23 +15,23 @@
 --- 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Tools & Process](#overview)
-- [Getting Started](#getting&started)
+- [Tools & Process](#tools--process)
+- [Getting Started](#getting-started)
 - [Features](#features)
-- [Goal](#goal)
+- [Research Goal](#research-goal)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 ---
 
-## Introduction
+## 🐨 Introduction
 
-Welcome to the **Super-Awesome-Totally-Cool Research Project #1** repository! 🐨 &copy; 2023 🐨
+Welcome to the **Super-Awesome-Totally-Cool Research Project #1** repository!  &copy; 2023 
  
 Are you interested in conducting online research studies with participants? User experience research? Or the ability to A/B test a product, design or idea?
 
 This repo should help you with that!
 
-## Overview
+## 🐨 Tools & Process
 
 List of all the software, tools, libraries, and services I used in order to complete this research project. Here is an overview of how they all intermingle:
 
@@ -39,7 +39,7 @@ List of all the software, tools, libraries, and services I used in order to comp
 
 Manim was used to create the educational animations for **Group A** to view. You can find the link to the Google Colab notebook above.
 
-## Getting Started
+## 🐨 Getting Started
 
 The requirements.txt file is fairly small:
 
@@ -58,7 +58,7 @@ uvicorn main:app --reload
 
 This will start a server on `http://127.0.0.1:8000` in your browser
 
-## Goal
+## 🐨 Research Goal
 
 This research project aims to investigate the effectiveness of using Manim animations in educating participants on core statistical concepts. The study will focus on concepts that are taught in 2000-level statistics courses at York University: 
 1. Central tendency
@@ -71,7 +71,7 @@ After viewing the content, participants will take a post-survey to evaluate thei
 
 > This research project is arranged by Dr. Herbert; a full-time faculty member in the Psychology Department, Faculty of Health
 
-## Features
+## 🐨 Features
 
 The web app was designed with these key features in mind:
 
