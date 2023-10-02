@@ -17,8 +17,8 @@
 - [Introduction](#introduction)
 - [Tools & Process](#tools--process)
 - [Getting Started](#getting-started)
-- [Features](#features)
 - [Research Goal](#research-goal)
+- [Features](#features)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 ---
