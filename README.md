@@ -25,7 +25,7 @@
 
 ## Introduction
 
-Welcome to the **Super-Awesome-Totally-Cool Research Project #1** repository! &copy; 2023
+Welcome to the **Super-Awesome-Totally-Cool Research Project #1** repository! 🐨 &copy; 2023 🐨
  
 Are you interested in conducting online research studies with participants? User experience research? Or the ability to A/B test a product, design or idea?
 
