@@ -23,7 +23,7 @@
 - [Acknowledgements](#acknowledgements)
 ---
 
-## 🐨 Introduction
+## Introduction 🐨
 
 Welcome to the **Super-Awesome-Totally-Cool Research Project #1** repository!  &copy; 2023 
  
