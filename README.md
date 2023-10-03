@@ -94,5 +94,17 @@ The web app was designed with these key features in mind:
 The idea was to ensure that user experience was never sacrificed. The content should be delivered in an easy and streamlined way, to fit within accessibility guidelines and to be responsive so they could interact with it on their preferred device of choice.
 
 
-
+```mermaid
+graph LR
+    A[homepage] --> B[consent page]
+    B[consent page] --> C[presurvey prompt]
+    C[pre-survey prompt] --> |qualtrics| E[group assignment]
+    C[pre-survey prompt] --> |pre-survey| E[group assignment]
+    E[group assignment] --> F[Group A]
+    E[group assignment] --> G[Group B]
+    F[Group A] --> H[post-survey prompt A]
+    G[Group B] --> I[post-survey prompt B]
+    H[post-survey prompt A] --> |qualtrics| J[Debrief page]
+    I[post-survey prompt B] --> |post-survey| J[Debrief page]
+```
 
