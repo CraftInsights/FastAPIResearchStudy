@@ -53,7 +53,7 @@ def assign_group_post(participantID: str):
 
         new_group = 'A' if last_group == 'B' else 'B'
 
-        next_page = f"/video1?participantID={participantID}" if new_group == 'A' else f"/infographic1?participantID={participantID}"
+        next_page = f"/video1" if new_group == 'A' else f"/infographic1"
 
         activity = "This activity consists of 4 videos totaling roughly 10 min in length." if new_group == 'A' else "This activity consists of 7 infographics."
 
