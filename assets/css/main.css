@@ -74,6 +74,11 @@ mark {
     background-color: rgba(0, 0, 0, 0.833);
     padding: 5px;
     border-radius: 5px;
+    width: 100%;            /* Set to the desired width */
+    height: 100px;           /* Set to the desired height */
+    display: flex;          /* Use flexbox to vertically center the content */
+    align-items: center;    /* Vertically center the content */
+    justify-content: center;/* Horizontally center the content */
 }
 
 
