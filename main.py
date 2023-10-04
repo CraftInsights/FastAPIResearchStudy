@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, Form, Depends
+from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import RedirectResponse
@@ -14,20 +14,27 @@ app.mount("/assets", StaticFiles(directory="assets"), name="assets")
 
 templates = Jinja2Templates(directory="templates")
 
+# Homepage
 @app.get("/")
 def homepage(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
+# Ethics + Consent page
+
 @app.get("/ethics")
 def ethics(request: Request):
-    return templates.TemplateResponse("ethics.html", {"request": request})
+    participant_id = str(uuid.uuid4())  # Generate a unique participant ID
+    return templates.TemplateResponse("ethics.html", {"request": request, "participantID": participant_id})
+
+
+# Group Assignment page - A or B
 
 @app.get("/assign_group")
-def show_form(request: Request):
-    return templates.TemplateResponse("assign_group.html", {"request": request})
+def show_form(request: Request, participantID: str = None):
+    return templates.TemplateResponse("assign_group.html", {"request": request, "participantID": participantID})
 
 @app.post("/assign_group")
-def assign_group_post():
+def assign_group_post(participantID: str):
     lock = FileLock("group_data.json.lock")
 
     with lock:
@@ -44,15 +51,14 @@ def assign_group_post():
             }
             last_group = 'B'
 
-        visitor_id = str(uuid.uuid4())
         new_group = 'A' if last_group == 'B' else 'B'
 
-        next_page = "/video1" if new_group == 'A' else "/infographic1"
+        next_page = f"/video1?participantID={participantID}" if new_group == 'A' else f"/infographic1?participantID={participantID}"
 
         activity = "This activity consists of 4 videos totaling roughly 10 min in length." if new_group == 'A' else "This activity consists of 7 infographics."
 
         data['Participants'][f'visitor {len(data["Participants"]) + 1}'] = {
-            'ID': visitor_id,
+            'ID': participantID,
             'Group': new_group
         }
         data['last_group'] = new_group
@@ -60,77 +66,80 @@ def assign_group_post():
         with open('group_data.json', 'w') as file:
             json.dump(data, file, indent=4)
 
-    return RedirectResponse(url=f"/show_group?group={new_group}&next_page={next_page}&activity={activity}", status_code=303)
+    return RedirectResponse(url=f"/show_group?group={new_group}&next_page={next_page}&activity={activity}&participantID={participantID}", status_code=303)
 
 @app.get("/show_group")
-def show_group(request: Request, group: str, next_page: str, activity: str):
+def show_group(request: Request, group: str, next_page: str, activity: str, participantID: str):
     return templates.TemplateResponse("assign_group.html", {
         "request": request,
         "group": group,
         "next_page": next_page,
-        "activity": activity 
+        "activity": activity,
+        "participantID": participantID
     })
 
 # Routing for video content
 
 @app.get("/video1")
-def video1(request: Request):
-    return templates.TemplateResponse("video1.html", {"request": request})
+def video1(request: Request, participantID: str):
+    return templates.TemplateResponse("video1.html", {"request": request, "participantID": participantID})
 
 @app.get("/video2")
-def video2(request: Request):
-    return templates.TemplateResponse("video2.html", {"request": request})
+def video2(request: Request, participantID: str):
+    return templates.TemplateResponse("video2.html", {"request": request, "participantID": participantID})
 
 @app.get("/video3")
-def video3(request: Request):
-    return templates.TemplateResponse("video3.html", {"request": request})
+def video3(request: Request, participantID: str):
+    return templates.TemplateResponse("video3.html", {"request": request, "participantID": participantID})
 
 @app.get("/video4")
-def video4(request: Request):
-    return templates.TemplateResponse("video4.html", {"request": request})
+def video4(request: Request, participantID: str):
+    return templates.TemplateResponse("video4.html", {"request": request, "participantID": participantID})
 
 # Routing for infographic content
 
 @app.get("/infographic1")
-def infographic1(request: Request):
-    return templates.TemplateResponse("infographic1.html", {"request": request})
+def infographic1(request: Request, participantID: str):
+    return templates.TemplateResponse("infographic1.html", {"request": request, "participantID": participantID})
 
 @app.get("/infographic2")
-def infographic2(request: Request):
-    return templates.TemplateResponse("infographic2.html", {"request": request})
+def infographic2(request: Request, participantID: str):
+    return templates.TemplateResponse("infographic2.html", {"request": request, "participantID": participantID})
 
 @app.get("/infographic3")
-def infographic3(request: Request):
-    return templates.TemplateResponse("infographic3.html", {"request": request})
+def infographic3(request: Request, participantID: str):
+    return templates.TemplateResponse("infographic3.html", {"request": request, "participantID": participantID})
 
 @app.get("/infographic4")
-def infographic4(request: Request):
-    return templates.TemplateResponse("infographic4.html", {"request": request})
+def infographic4(request: Request, participantID: str):
+    return templates.TemplateResponse("infographic4.html", {"request": request, "participantID": participantID})
 
 @app.get("/infographic5")
-def infographic5(request: Request):
-    return templates.TemplateResponse("infographic5.html", {"request": request})
+def infographic5(request: Request, participantID: str):
+    return templates.TemplateResponse("infographic5.html", {"request": request, "participantID": participantID})
 
 # Survey routing
 
 @app.get("/pre_survey")
-def pre_survey(request: Request):
-    return templates.TemplateResponse("pre_survey.html", {"request": request})
+def pre_survey(request: Request, participantID: str = None):
+    return templates.TemplateResponse("pre_survey.html", {"request": request, "participantID": participantID})
+
 
 @app.get("/post_survey_videos")
-def post_survey_videos(request: Request):
-    return templates.TemplateResponse("post_survey_videos.html", {"request": request})
+def post_survey_videos(participantID: str):
+    post_survey_url = f"https://yorkufoh.ca1.qualtrics.com/jfe/form/SV_2rzqeitqJa1ZWpU?participantID={participantID}"
+    return RedirectResponse(url=post_survey_url, status_code=303)
 
 @app.get("/post_survey_infographic")
-def post_survey_infographic(request: Request):
-    return templates.TemplateResponse("post_survey_infographic.html", {"request": request})
+def post_survey_infographic(participantID: str):
+    post_survey_url = f"https://yorkufoh.ca1.qualtrics.com/jfe/form/SV_cMhhfU5fF7pXHJI?participantID={participantID}"
+    return RedirectResponse(url=post_survey_url, status_code=303)
 
 # Debrief
 
 @app.get("/debrief")
 def debrief(request: Request):
     return templates.TemplateResponse("debrief.html", {"request": request})
-
 
 if __name__ == "__main__":
     import uvicorn

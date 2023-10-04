@@ -1,1 +1,9 @@
-{}
+{
+    "Participants": {
+        "visitor 1": {
+            "ID": "eb509c6f-17b5-4a68-bc88-f25a28da2251",
+            "Group": "A"
+        }
+    },
+    "last_group": "A"
+}
