@@ -7,12 +7,24 @@ from filelock import FileLock
 import json
 import uuid
 
+'''
+ *Important Note*
+ Special thanks to my wife Chloe for keeping me
+ on track and helping me out with some tasks to 
+ complete this project. 
+'''
+
 app = FastAPI()
 
 # Serve static files
 app.mount("/assets", StaticFiles(directory="assets"), name="assets")
 
+# Import the templates from the templates folder for Jinja2 to use
 templates = Jinja2Templates(directory="templates")
+
+# ---------------------------------------------------------------------------------------------------------------
+
+# Routing for the basic pages
 
 # Homepage
 @app.get("/")
@@ -26,48 +38,65 @@ def ethics(request: Request):
     participant_id = str(uuid.uuid4())  # Generate a unique participant ID
     return templates.TemplateResponse("ethics.html", {"request": request, "participantID": participant_id})
 
+# Debrief
+
+@app.get("/debrief")
+def debrief(request: Request):
+    return templates.TemplateResponse("debrief.html", {"request": request})
+
+# ---------------------------------------------------------------------------------------------------------------
 
 # Group Assignment page - A or B
 
+# Route for displaying the group assignment form
 @app.get("/assign_group")
 def show_form(request: Request, participantID: str = None):
     return templates.TemplateResponse("assign_group.html", {"request": request, "participantID": participantID})
 
+# Route for handling the submission of the group assignment form
 @app.post("/assign_group")
 def assign_group_post(participantID: str):
+    # Use a file lock to ensure safe concurrent access to the JSON data file
     lock = FileLock("group_data.json.lock")
 
     with lock:
         try:
+            # Attempt to read the existing JSON data
             with open('group_data.json', 'r') as file:
                 data = json.load(file)
                 last_group = data.get('last_group', 'B')
                 if "Participants" not in data:
                     data['Participants'] = {}
         except FileNotFoundError:
+            # If the data file doesn't exist, create a new data structure
             data = {
                 'Participants': {},
                 'last_group': 'B'
             }
             last_group = 'B'
 
+        # Determine the new group based on the last group assigned
         new_group = 'A' if last_group == 'B' else 'B'
 
+        # Determine the next page and activity based on the new group
         next_page = f"/video1" if new_group == 'A' else f"/infographic1"
-
         activity = "This activity consists of 4 videos totaling roughly 10 min in length." if new_group == 'A' else "This activity consists of 7 infographics."
 
+        # Add the participant to the data structure and update the last group
         data['Participants'][f'visitor {len(data["Participants"]) + 1}'] = {
             'ID': participantID,
             'Group': new_group
         }
         data['last_group'] = new_group
 
+        # Write the updated data back to the JSON file
         with open('group_data.json', 'w') as file:
             json.dump(data, file, indent=4)
 
+    # Redirect the user to the group information page
     return RedirectResponse(url=f"/show_group?group={new_group}&next_page={next_page}&activity={activity}&participantID={participantID}", status_code=303)
 
+# Route for displaying the group information page
 @app.get("/show_group")
 def show_group(request: Request, group: str, next_page: str, activity: str, participantID: str):
     return templates.TemplateResponse("assign_group.html", {
@@ -77,6 +106,8 @@ def show_group(request: Request, group: str, next_page: str, activity: str, part
         "activity": activity,
         "participantID": participantID
     })
+
+# ---------------------------------------------------------------------------------------------------------------
 
 # Routing for video content
 
@@ -95,6 +126,8 @@ def video3(request: Request, participantID: str):
 @app.get("/video4")
 def video4(request: Request, participantID: str):
     return templates.TemplateResponse("video4.html", {"request": request, "participantID": participantID})
+
+# ---------------------------------------------------------------------------------------------------------------
 
 # Routing for infographic content
 
@@ -118,6 +151,8 @@ def infographic4(request: Request, participantID: str):
 def infographic5(request: Request, participantID: str):
     return templates.TemplateResponse("infographic5.html", {"request": request, "participantID": participantID})
 
+# ---------------------------------------------------------------------------------------------------------------
+
 # Survey routing
 
 @app.get("/pre_survey")
@@ -135,11 +170,10 @@ def post_survey_infographic(participantID: str):
     post_survey_url = f"https://yorkufoh.ca1.qualtrics.com/jfe/form/SV_cMhhfU5fF7pXHJI?participantID={participantID}"
     return RedirectResponse(url=post_survey_url, status_code=303)
 
-# Debrief
+# ---------------------------------------------------------------------------------------------------------------
 
-@app.get("/debrief")
-def debrief(request: Request):
-    return templates.TemplateResponse("debrief.html", {"request": request})
+
+
 
 if __name__ == "__main__":
     import uvicorn
