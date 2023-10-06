@@ -1,11 +1,12 @@
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi.responses import RedirectResponse
+from fastapi.responses import RedirectResponse, StreamingResponse, Response
 from filelock import FileLock
-
+import mimetypes
 import json
 import uuid
+import os
 
 '''
  *Important Note*
@@ -21,6 +22,49 @@ app.mount("/assets", StaticFiles(directory="assets"), name="assets")
 
 # Import the templates from the templates folder for Jinja2 to use
 templates = Jinja2Templates(directory="templates")
+
+# ---------------------------------------------------------------------------------------------------------------
+
+# Function to serve video with support for range requests
+def serve_video(video_path: str, request: Request) -> Response:
+    '''
+    Serve a video file with support for range requests.
+    This allows seeking, pausing, and fast forwarding in video playback.
+    '''
+    
+    range_header = request.headers.get("range", None)
+    
+    if not os.path.isfile(video_path) or not range_header:
+        # If the video doesn't exist or there's no range request, return the whole file
+        with open(video_path, "rb") as file:
+            return StreamingResponse(file, media_type=mimetypes.guess_type(video_path)[0])
+
+    file_size = os.path.getsize(video_path)
+    
+    # Parse the range header
+    start, end = range_header.replace("bytes=", "").split("-")
+    start = int(start)
+    end = int(end) if end else file_size - 1
+    
+    # Create the content for the specified range
+    with open(video_path, "rb") as file:
+        file.seek(start)
+        video_data = file.read(end - start + 1)
+    
+    # Create the response headers
+    response_headers = {
+        "Content-Range": f"bytes {start}-{end}/{file_size}",
+        "Accept-Ranges": "bytes",
+        "Content-Length": str(end - start + 1),
+        "Content-Type": mimetypes.guess_type(video_path)[0],
+    }
+    
+    return Response(video_data, status_code=206, headers=response_headers)
+
+@app.get("/videos/{video_name}")
+async def video_endpoint(request: Request, video_name: str):
+    video_path = os.path.join("assets", "videos", video_name)
+    return serve_video(video_path, request)
 
 # ---------------------------------------------------------------------------------------------------------------
 
