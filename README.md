@@ -12,6 +12,8 @@
   <img src="https://img.shields.io/badge/York_University_Department_of_Psychology-red" alt="Department">
 </div>
 
+
+
 --- 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -68,7 +70,7 @@ This will start a server on `http://127.0.0.1:8000` in your browser
 
 ### 🐨
 
-> This research project is arranged by Dr. Herbert; a full-time faculty member in the Psychology Department, Faculty of Health
+> This research project was supervised by Dr. Herbert; a full-time faculty member in the Psychology Department, Faculty of Health
 
 This research project aims to investigate the effectiveness of using Manim animations in educating participants on core statistical concepts. The study will focus on concepts that are taught in 2000-level statistics courses at York University: 
 1. Central tendency
@@ -108,3 +110,17 @@ graph LR
     I[post-survey prompt B] --> |post-survey| J[Debrief page]
 ```
 
+## License
+
+[![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-7030A0.svg)](LICENSE)
+
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](LICENSE).
+
+## Acknowledgements 
+
+I would like to express my gratitude to the following individuals and projects that have contributed to or inspired this work:
+
+- [Monique Herbert](https://health.yorku.ca/health-profiles/?dept=&mid=1459256): Your insights and feedback greatly improved the quality of this project. Couldn't ask for a better mentor. 
+- [Mark Adkins](https://github.com/Standard-Deviator): Thank you for your valuable contributions to UX research, teaching, and statistics. I drew inspiration from DataCrunch's vision.
+- Mel Gatt: Provided incredible insight and testing to help polish and refine the project.
+- Chloe: My beautiful and amazing wife who offered help on a few features. Her support gives me fuel.
