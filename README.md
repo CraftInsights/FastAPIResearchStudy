@@ -1,4 +1,4 @@
-# Super-Awesome-Totally-Cool Research Project #1
+# Koal-AB
 
 <div align="center" style="margin-bottom: 20px;">
   <img src="https://manimresearchstudy.onrender.com/assets/img/Github%20Logo.png" alt="Project Logo">
@@ -29,11 +29,13 @@
 
 ### 🐨
 
-Welcome to the **Super-Awesome-Totally-Cool Research Project #1** repository!  &copy; 2023 
+Welcome to the GitHub repository for **Koal-AB** &copy; 2023
  
 Are you interested in conducting online research studies with participants? User experience research? Or the ability to A/B test a product, design or idea?
 
 This repo should help you with that!
+
+This code was specifically built for a research project at York University in 2023 titled "Animation vs Infographic: Does content delivery matter when explaining statistical concepts?", however, it can be repurposed for your specific research needs.
 
 ## Tools & Process
 
@@ -44,6 +46,8 @@ List of all the software, tools, libraries, and services I used in order to comp
 ![Overview](https://manimresearchstudy.onrender.com/assets/img/diagram.png)
 
 Manim was used to create the educational animations for **Group A** to view. You can find the link to the Google Colab notebook above.
+
+The site is also written to allow you to swap out and integrate with any survey provider (SurveyMonkey, Google Forms, Typeform etc..) or with your own custom built surveys.
 
 ## Getting Started
 
