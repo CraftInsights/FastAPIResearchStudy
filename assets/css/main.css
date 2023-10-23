@@ -112,7 +112,7 @@ mark {
 }
 
 .carousel-inner img, .carousel-inner video {
-    max-height: 540px;  /* Adjust this value to fit your needs */
+    max-height: 740px;  /* Adjust this value to fit your needs */
     max-width: 960px;
     margin: 0 auto; /* Centers the image horizontally */
 }

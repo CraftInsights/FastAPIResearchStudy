@@ -3,6 +3,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import RedirectResponse, StreamingResponse, Response
 from filelock import FileLock
+
 import mimetypes
 import json
 import uuid
@@ -76,14 +77,12 @@ def homepage(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 # Ethics + Consent page
-
 @app.get("/ethics")
 def ethics(request: Request):
     participant_id = str(uuid.uuid4())  # Generate a unique participant ID
     return templates.TemplateResponse("ethics.html", {"request": request, "participantID": participant_id})
 
 # Debrief
-
 @app.get("/debrief")
 def debrief(request: Request):
     return templates.TemplateResponse("debrief.html", {"request": request})
@@ -203,7 +202,6 @@ def infographic5(request: Request, participantID: str):
 def pre_survey(request: Request, participantID: str = None):
     return templates.TemplateResponse("pre_survey.html", {"request": request, "participantID": participantID})
 
-
 @app.get("/post_survey_videos")
 def post_survey_videos(participantID: str):
     post_survey_url = f"https://yorkufoh.ca1.qualtrics.com/jfe/form/SV_2rzqeitqJa1ZWpU?participantID={participantID}"
@@ -215,7 +213,6 @@ def post_survey_infographic(participantID: str):
     return RedirectResponse(url=post_survey_url, status_code=303)
 
 # ---------------------------------------------------------------------------------------------------------------
-
 
 
 
