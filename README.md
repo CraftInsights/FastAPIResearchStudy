@@ -21,6 +21,7 @@
 - [Getting Started](#getting-started)
 - [Research Goal](#research-goal)
 - [Features](#features)
+- [User Journey](#user-journey)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 ---
@@ -92,13 +93,25 @@ After viewing the content, participants will take a post-survey to evaluate thei
 
 The web app was designed with these key features in mind:
 
-- Feature 1: Users navigate to a homepage that introduces the study's goals and asks for user consent.
-- Feature 2: Users who wish to participate are randomly assigned to two groups; A or B.
-- Feature 3: Users are asked to participate in surveys that were made in Qualtrics.
-- Feature 4: Participants are automatically redirected to the last page that debriefs them on the study.
+ 1) AODA and WCAG compliant.
+ 2) Partial content loading for video files for better playback.
+ 3) Responsive for mobile, desktop, tablet, and other devices.
+ 4) Participant ID generation to link users between surveys.
+ 5) Modular and easy configuration for A/B testing.
+ 6) Smooth and frictionless privacy and consent page.
+
+
+## User Journey
+
+### 🐨
+
+- Users navigate to a homepage that introduces the study's goals and asks for user consent.
+- Users who wish to participate are randomly assigned to two groups; A or B.
+- Users complete eLearning modules
+- Users are asked to participate in surveys that were made in Qualtrics.
+- Participants are automatically redirected to the last page that debriefs them on the study.
 
 The idea was to ensure that user experience was never sacrificed. The content should be delivered in an easy and streamlined way, to fit within accessibility guidelines and to be responsive so they could interact with it on their preferred device of choice.
-
 
 ```mermaid
 graph LR
