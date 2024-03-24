@@ -57,10 +57,12 @@ The site is also written to allow you to swap out and integrate with any survey 
 The requirements.txt file is fairly small:
 
 ```py
-fastapi==0.79.0
-uvicorn==0.18.2
+fastapi==0.110.0
+uvicorn==0.29.0
 Jinja2==3.1.2
 filelock==3.0.12
+python-multipart==0.0.9
+starlette==0.36.3
 ```
 
 Once you have cloned the repository, navigate to your terminal and run this command:
