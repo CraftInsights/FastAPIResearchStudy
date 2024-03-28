@@ -30,13 +30,23 @@
 
 ### 🐨
 
-Welcome to the GitHub repository for **Koal-AB** &copy; 2023
+Welcome to the GitHub repository for **Koal-AB** &copy; 2024
  
 Are you interested in conducting online research studies with participants? User experience research? Or the ability to A/B test a product, design or idea?
 
 This repo should help you with that!
 
-This code was specifically built for a research project at York University in 2023 titled "Animation vs Infographic: Does content delivery matter when explaining statistical concepts?", however, it can be repurposed for your specific research needs.
+This code was specifically built for a research project at York University in 2024 titled "Animation vs Infographic: Does content delivery matter when explaining statistical concepts?", however, it can be repurposed for your specific research needs.
+
+<br>
+
+<p align="center">
+  <i>Unfortunately, you wouldn't be able to participate unless you are the target<br> population for the research study, but here is the flyer if you are curious:</i>
+</p>
+
+<p align="center">
+  <img src="https://manimresearchstudy.onrender.com/assets/img/Flyer.png" width="480" height="720">
+</p>
 
 ## Tools & Process
 
