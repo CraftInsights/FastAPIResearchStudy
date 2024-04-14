@@ -36,7 +36,7 @@ Are you interested in conducting online research studies with participants? User
 
 This repo should help you with that!
 
-This code was specifically built for a research project at York University in 2024 titled "Animation vs Infographic: Does content delivery matter when explaining statistical concepts?", however, it can be repurposed for your specific research needs.
+This code was specifically built for a research project at York University in 2024 titled "*Animation vs Infographic: Does content delivery matter when explaining statistical concepts?*", however, it can be repurposed for your specific research needs.
 
 <br>
 
